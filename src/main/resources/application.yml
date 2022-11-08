@@ -1,0 +1,43 @@
+server:
+  port: 8601
+
+spring:
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: meteorologic
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 3
+      max-active: 2
+      max-idle: 0
+      connection-init-sql: SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: AUTO
+  type-aliases-package: com.yang.template
+  type-enums-package: com.yang.template.**.enums
+  mapper-locations: classpath:/mappers/*.xml
+
+logging:
+  level:
+    io.swagger.models.parameters.AbstractSerializableParameter: error
