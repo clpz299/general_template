@@ -1,5 +1,6 @@
 package com.general.template.auth.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.general.template.assembler.SysApiAssembler;
@@ -29,6 +30,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@DS("slave")
 public class SysApiServiceImpl implements SysApiService {
 
     @Resource

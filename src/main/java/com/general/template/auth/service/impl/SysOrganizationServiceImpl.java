@@ -1,6 +1,7 @@
 package com.general.template.auth.service.impl;
 
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.general.template.assembler.SysOrganizationAssembler;
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
  * @author quantumtso
  */
 @Service
+@DS("slave")
 public class SysOrganizationServiceImpl implements SysOrganizationService {
 
     @Resource

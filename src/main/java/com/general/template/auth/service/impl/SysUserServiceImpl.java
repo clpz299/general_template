@@ -1,5 +1,6 @@
 package com.general.template.auth.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.general.template.assembler.SysUserAssembler;
@@ -32,6 +33,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
+@DS("slave")
 public class SysUserServiceImpl implements SysUserService {
 
     private String defaultPassword = "123456";

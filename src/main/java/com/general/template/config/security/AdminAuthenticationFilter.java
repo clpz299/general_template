@@ -80,12 +80,12 @@ public class AdminAuthenticationFilter extends AbstractAuthenticationProcessingF
             }
 
             String loginCaptchaKey = LOGIN_CAPTCHA_KEY + signInRequest.getUsername();
-            if (!Optional.ofNullable(redisTemplate.opsForValue().get(loginCaptchaKey))
-                    .map(String::valueOf)
-                    .map(c -> c.equals(signInRequest.getCaptcha().toLowerCase()))
-                    .orElse(false)) {
-                throw new AuthenticationServiceException("验证码已过期");
-            }
+//            if (!Optional.ofNullable(redisTemplate.opsForValue().get(loginCaptchaKey))
+//                    .map(String::valueOf)
+//                    .map(c -> c.equals(signInRequest.getCaptcha().toLowerCase()))
+//                    .orElse(false)) {
+//                throw new AuthenticationServiceException("验证码已过期");
+//            }
         }
 
         AdminAuthenticationToken authRequest = new AdminAuthenticationToken(signInRequest.getUsername(), signInRequest.getPassword());

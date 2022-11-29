@@ -34,8 +34,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: AUTO
-  type-aliases-package: com.yang.template
-  type-enums-package: com.yang.template.**.enums
+  type-aliases-package: com.general.template
+  type-enums-package: com.general.template.**.enums
   mapper-locations: classpath:/mappers/*.xml
 
 logging:
