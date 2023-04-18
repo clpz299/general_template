@@ -1,13 +1,20 @@
 package com.general.template;
 
+import com.alibaba.fastjson.JSONObject;
 import com.general.template.auth.dto.SysUserDTO;
 import com.general.template.auth.service.SysUserService;
+import com.general.template.utils.CommonlyLocalDateTimeUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @SpringBootTest
 class TemplateApplicationTests {
@@ -30,5 +37,8 @@ class TemplateApplicationTests {
         sysUserDTO.setRoleIds(roles);
         service.create(sysUserDTO, null);
     }
+
+
+
 
 }
